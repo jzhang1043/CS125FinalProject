@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         TextView textView1 = findViewById(R.id.textView1);
         TextView textView2 = findViewById(R.id.textView2);
         TextView textView3 = findViewById(R.id.textView3);
-
     }
 
     @Override
