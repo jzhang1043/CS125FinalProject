@@ -9,4 +9,7 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="enter_location">Please select the State that you want to look for</string>
+    <string name="display_time">Your current time is</string>
+    <string name="yourTimeZone">You are currently in</string>
 </resources>
