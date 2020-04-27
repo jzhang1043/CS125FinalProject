@@ -28,8 +28,8 @@
 
         <TextView
             android:id="@+id/textView1"
-            android:layout_width="301dp"
-            android:layout_height="66dp"
+            android:layout_width="344dp"
+            android:layout_height="65dp"
             android:text="@string/enter_location"
             android:textColorLink="@color/colorAccent"
             android:textSize="24sp"
