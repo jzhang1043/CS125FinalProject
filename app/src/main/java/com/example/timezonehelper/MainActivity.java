@@ -26,16 +26,6 @@ public class MainActivity extends AppCompatActivity {
         TextView textView2 = findViewById(R.id.textView2);
         TextView textView3 = findViewById(R.id.textView3);
 
-        /** set up items for the spinner.*/
-        String[] arraySpinner = new String[]{
-                "1", "2", "3", "4", "5", "6", "7"
-        };
-        Spinner spinner = findViewById(R.id.spinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, arraySpinner);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-
     }
 
     @Override
