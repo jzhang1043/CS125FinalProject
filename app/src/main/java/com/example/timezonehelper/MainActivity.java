@@ -18,10 +18,16 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.TimeZone;
 
+/** main activity of the app.*/
+
 public class MainActivity extends AppCompatActivity {
+    /** information carried to Activity 2. */
     public static final String EXTRA_TEXT = "ExtraText";
+    /** timeThread instance that updates the time. */
     private timeThread clock;
+    /** the TextView of the current time which can be updated. */
     private static TextView systemTime;
+    /** the time and date information of the system in String. */
     private static String date;
 
     @Override
@@ -29,31 +35,33 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // set action to the toolbar. Top right can pull out menu.
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        /* set myTimeZone */
-        TextView myTimeZone = findViewById(R.id.myTimeZone);
-        TimeZone timeZone = TimeZone.getDefault();
-        myTimeZone.setText(timeZone.getDisplayName());
-
-        /* set the current Time. */
+        // set the current Time.
         systemTime = findViewById(R.id.currentTime);
         clock = new timeThread();
         clock.start();
 
+        // set my time Zone using timezone.getDefault(); get the system's time Zone.
+        TextView myTimeZone = findViewById(R.id.myTimeZone);
+        TimeZone timeZone = TimeZone.getDefault();
+        myTimeZone.setText(timeZone.getDisplayName());
+
+        // set search button. OnClickListener is able to run openActivity2() once clicked.
         Button searchButton = findViewById(R.id.button);
         searchButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 openActivity2();
             }
         });
-
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+        // it is located at the top right; 3 little dot menu.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -82,6 +90,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /** timeThread class that extends Thread.
+     * It is for counting the time and update the time every second.
+     * It will be called by onCreate method when the app is first initialized.
+     */
     class timeThread extends Thread {
         @Override
         public void run() {
@@ -100,6 +112,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /** Handler is called by timeThread class.
+     * private instance variable date will be used to update the TextView systemTime.
+     * This handler will update the private instance variable systemTime */
     public static Handler m_Handler = new Handler() {
         public void handleMessage(Message msg) {
             switch (msg.what) {
