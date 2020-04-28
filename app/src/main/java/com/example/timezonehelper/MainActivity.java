@@ -2,19 +2,25 @@ package com.example.timezonehelper;
 
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+
+import com.google.android.material.textfield.TextInputLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.os.Handler;
+import android.os.Message;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+
 public class MainActivity extends AppCompatActivity {
+    private static SimpleDateFormat currentTime;
+    private static TextView systemTime;
+    private timeThread mClockThread;
+    private static String date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +31,12 @@ public class MainActivity extends AppCompatActivity {
         TextView textView1 = findViewById(R.id.textView1);
         TextView textView2 = findViewById(R.id.textView2);
         TextView textView3 = findViewById(R.id.textView3);
+        TextInputLayout textInputLayout = findViewById(R.id.textInput);
+
+        systemTime = findViewById(R.id.currentTime);
+        mClockThread = new timeThread();
+        mClockThread.start();
+
     }
 
     @Override
@@ -47,6 +59,33 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public static Handler m_Handler = new Handler() {
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case 0:
+                    systemTime.setText(date);
+                    break;
+            }
+        }
+    };
+    class timeThread extends Thread {
+        @Override
+        public void run() {
+            super.run();
+            try {
+                do {
+                    currentTime = new SimpleDateFormat("HH:mm  E");
+                    date = currentTime.format(new java.util.Date());
+                    Thread.sleep(1000);
+                    Message m = new Message();
+                    MainActivity.m_Handler.sendMessage(m);
+                } while (!timeThread.interrupted());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
 

@@ -28,8 +28,8 @@
 
         <TextView
             android:id="@+id/textView1"
-            android:layout_width="344dp"
-            android:layout_height="65dp"
+            android:layout_width="326dp"
+            android:layout_height="69dp"
             android:text="@string/enter_location"
             android:textColorLink="@color/colorAccent"
             android:textSize="24sp"
@@ -56,8 +56,8 @@
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="218dp"
-            android:layout_height="36dp"
+            android:layout_width="217dp"
+            android:layout_height="42dp"
             android:text="@string/yourTimeZone"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -65,7 +65,47 @@
             app:layout_constraintHorizontal_bias="0.082"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.181" />
+            app:layout_constraintVertical_bias="0.183" />
+
+        <TextView
+            android:id="@+id/currentTime"
+            android:layout_width="159dp"
+            android:layout_height="42dp"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.928"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.121" />
+
+        <TextView
+            android:id="@+id/myTimeZone"
+            android:layout_width="158dp"
+            android:layout_height="43dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.924"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.184" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInput"
+            android:layout_width="324dp"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.427">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/input" />
+        </com.google.android.material.textfield.TextInputLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
