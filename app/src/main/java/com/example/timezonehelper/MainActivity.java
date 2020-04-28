@@ -19,21 +19,18 @@ import java.text.SimpleDateFormat;
 import java.util.TimeZone;
 
 public class MainActivity extends AppCompatActivity {
-    private Button searchButton;
-    private EditText textInput;
+    public static final String EXTRA_TEXT = "ExtraText";
+    private timeThread clock;
     private static TextView systemTime;
-    private String country;
     private static String date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        TextView textView1 = findViewById(R.id.textView1);
-        TextView textView2 = findViewById(R.id.textView2);
-        TextView textView3 = findViewById(R.id.textView3);
 
         /* set myTimeZone */
         TextView myTimeZone = findViewById(R.id.myTimeZone);
@@ -42,18 +39,16 @@ public class MainActivity extends AppCompatActivity {
 
         /* set the current Time. */
         systemTime = findViewById(R.id.currentTime);
-        timeThread clock = new timeThread();
+        clock = new timeThread();
         clock.start();
 
-        textInput = findViewById(R.id.textInput);
-        searchButton = (Button) findViewById(R.id.button);
+        Button searchButton = findViewById(R.id.button);
         searchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
-                country = textInput.getText().toString();
                 openActivity2();
             }
         });
+
     }
 
     @Override
@@ -78,15 +73,15 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public static Handler m_Handler = new Handler() {
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case 0:
-                    systemTime.setText(date);
-                    break;
-            }
-        }
-    };
+    public void openActivity2() {
+        EditText TextInput = findViewById(R.id.textInput);
+        String text = TextInput.getText().toString();
+
+        Intent intent = new Intent(this, Activity2.class);
+        intent.putExtra(EXTRA_TEXT, text);
+        startActivity(intent);
+    }
+
     class timeThread extends Thread {
         @Override
         public void run() {
@@ -98,15 +93,22 @@ public class MainActivity extends AppCompatActivity {
                     Thread.sleep(1000);
                     Message m = new Message();
                     MainActivity.m_Handler.sendMessage(m);
-                } while (!timeThread.interrupted());
+                } while (!MainActivity.timeThread.interrupted());
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
     }
 
-    public void openActivity2() {
-        Intent intent = new Intent(this, Activity2.class);
-    }
+    public static Handler m_Handler = new Handler() {
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case 0:
+                    systemTime.setText(date);
+                    break;
+            }
+        }
+    };
+
 }
 
