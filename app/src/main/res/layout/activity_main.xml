@@ -56,16 +56,16 @@
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="217dp"
-            android:layout_height="42dp"
+            android:layout_width="133dp"
+            android:layout_height="40dp"
             android:text="@string/yourTimeZone"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.082"
+            app:layout_constraintHorizontal_bias="0.057"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.183" />
+            app:layout_constraintVertical_bias="0.182" />
 
         <TextView
             android:id="@+id/currentTime"
@@ -81,14 +81,15 @@
 
         <TextView
             android:id="@+id/myTimeZone"
-            android:layout_width="158dp"
-            android:layout_height="43dp"
+            android:layout_width="235dp"
+            android:layout_height="36dp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.924"
+            app:layout_constraintHorizontal_bias="0.846"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.184" />
+            app:layout_constraintVertical_bias="0.187" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInput"

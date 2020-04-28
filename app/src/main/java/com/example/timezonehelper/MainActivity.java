@@ -15,11 +15,14 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.TimeZone;
 
 public class MainActivity extends AppCompatActivity {
     private static SimpleDateFormat currentTime;
     private static TextView systemTime;
-    private timeThread mClockThread;
+    private timeThread Clock;
     private static String date;
 
     @Override
@@ -31,11 +34,18 @@ public class MainActivity extends AppCompatActivity {
         TextView textView1 = findViewById(R.id.textView1);
         TextView textView2 = findViewById(R.id.textView2);
         TextView textView3 = findViewById(R.id.textView3);
-        TextInputLayout textInputLayout = findViewById(R.id.textInput);
 
+        /* set myTimeZone */
+        TextView myTimeZone = findViewById(R.id.myTimeZone);
+        TimeZone timeZone = TimeZone.getDefault();
+        myTimeZone.setText(timeZone.getDisplayName());
+
+        /* set the current Time. */
         systemTime = findViewById(R.id.currentTime);
-        mClockThread = new timeThread();
-        mClockThread.start();
+        Clock = new timeThread();
+        Clock.start();
+
+        TextInputLayout textInputLayout = findViewById(R.id.textInput);
 
     }
 

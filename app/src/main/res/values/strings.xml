@@ -9,7 +9,7 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="enter_location">Please select the country that you are looking for</string>
+    <string name="enter_location">Please enter the country that you are looking for</string>
     <string name="display_time">Your current time:</string>
     <string name="yourTimeZone">"You are in: "</string>
     <string name="input">Ex. USA, Canada, Japan...</string>
