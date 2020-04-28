@@ -1,9 +1,7 @@
 package com.example.timezonehelper;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-
-import com.google.android.material.textfield.TextInputLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -12,17 +10,19 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
 public class MainActivity extends AppCompatActivity {
-    private static SimpleDateFormat currentTime;
+    private Button searchButton;
+    private EditText textInput;
     private static TextView systemTime;
-    private timeThread Clock;
+    private String country;
     private static String date;
 
     @Override
@@ -42,11 +42,18 @@ public class MainActivity extends AppCompatActivity {
 
         /* set the current Time. */
         systemTime = findViewById(R.id.currentTime);
-        Clock = new timeThread();
-        Clock.start();
+        timeThread clock = new timeThread();
+        clock.start();
 
-        TextInputLayout textInputLayout = findViewById(R.id.textInput);
-
+        textInput = findViewById(R.id.textInput);
+        searchButton = (Button) findViewById(R.id.button);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                country = textInput.getText().toString();
+                openActivity2();
+            }
+        });
     }
 
     @Override
@@ -86,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             super.run();
             try {
                 do {
-                    currentTime = new SimpleDateFormat("HH:mm  E");
+                    SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm  E");
                     date = currentTime.format(new java.util.Date());
                     Thread.sleep(1000);
                     Message m = new Message();
@@ -96,6 +103,10 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void openActivity2() {
+        Intent intent = new Intent(this, Activity2.class);
     }
 }
 
