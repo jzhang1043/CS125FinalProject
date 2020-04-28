@@ -1,7 +1,6 @@
 package com.example.timezonehelper;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,7 +15,7 @@ public class Activity2 extends AppCompatActivity {
 
         Intent intent = getIntent();
         String text = intent.getStringExtra(MainActivity.EXTRA_TEXT);
-        TextView textView1 = findViewById(R.id.demo);
+        TextView textView1 = findViewById(R.id.inputCountry);
 
         textView1.setText(text);
 

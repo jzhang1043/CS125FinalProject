@@ -17,4 +17,7 @@
     <string name="Search">Search</string>
     <string name="enter_location2">Specific State?</string>
     <string name="activity2">Activity2</string>
+    <string name="time_zone_text">List of Time Zones:</string>
+    <string name="TimeZone">Time Zone</string>
+    <string name="time">Time</string>
 </resources>
