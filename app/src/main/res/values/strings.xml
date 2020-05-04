@@ -12,7 +12,7 @@
     <string name="enter_location">Please enter the country that you are looking for</string>
     <string name="display_time">Your current time:</string>
     <string name="yourTimeZone">"You are in: "</string>
-    <string name="input_hint">Ex. USA, Canada, Japan...</string>
+    <string name="input_hint">Please enter the full name of the country</string>
     <string name="input_hint2">Ex. New York, California...</string>
     <string name="Search">Search</string>
     <string name="enter_location2">Specific State?</string>
