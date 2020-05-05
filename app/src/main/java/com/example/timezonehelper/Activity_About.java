@@ -8,8 +8,8 @@ public class Activity_About extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity__about);
+        super.onCreate(savedInstanceState); // inherit from parent
+        setContentView(R.layout.activity__about); // sets layout for about
     }
 
 
