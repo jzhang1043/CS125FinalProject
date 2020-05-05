@@ -50,11 +50,8 @@ public class MainActivity extends AppCompatActivity {
         clock.start(); // start the clock
 
         // set my time Zone using timezone.getDefault(); get the system's time Zone.
-        // TextView myTimeZone = findViewById(R.id.myTimeZone);
         TextView myTimeZone = findViewById(R.id.myTimeZone); // create a textview obj called mytimezone
-        //TimeZone timeZone = TimeZone.getDefault();
         TimeZone timeZone = TimeZone.getDefault(); // create a timezone object called timezone
-        //myTimeZone.setText(timeZone.getDisplayName());
         myTimeZone.setText(timeZone.getDisplayName());  // set text with mytimezone
 
         // set search button. OnClickListener is able to run openActivity2() once clicked.
