@@ -17,7 +17,6 @@ public class TimeZoneOfCountry {
     /** map that stores all countryCode and its timeZones. */
     private static Map<String, Set<TimeZone>> availableTimezones = new HashMap<String, Set<TimeZone>>();
     private static Map<String, Set<String>> timezoneID = new HashMap<String, Set<String>>();
-
     /** constructor. */
     public TimeZoneOfCountry() {
         //set up the map.
@@ -61,4 +60,6 @@ public class TimeZoneOfCountry {
         }
         return false;
     }
+
+
 }

@@ -25,6 +25,8 @@ import java.util.TimeZone;
 public class MainActivity extends AppCompatActivity {
     /** information carried to Activity 2. */
     public static final String EXTRA_TEXT = "ExtraText";
+    /** information carried to Activity 2.*/
+    public static final String EXTRA_TIME = "ExtraTime";
     /** timeThread instance that updates the time. */
     private timeThread clock;
     /** the TextView of the current time which can be updated. */
@@ -58,6 +60,9 @@ public class MainActivity extends AppCompatActivity {
                 openActivity2();
             }
         });
+
+
+
     }
 
     @Override
@@ -77,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent about = new Intent(this, Activity_About.class);
+            startActivity(about);
             return true;
         }
 

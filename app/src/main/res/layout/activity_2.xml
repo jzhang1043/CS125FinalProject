@@ -45,24 +45,10 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.56"
+            app:layout_constraintHorizontal_bias="0.685"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.211" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="68dp"
-            android:layout_height="37dp"
-            android:text="@string/time"
-            android:textColor="#DC4747"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.985"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.21" />
 
         <TextView
             android:id="@+id/textView6"
@@ -93,21 +79,21 @@
 
                 <TextView
                     android:id="@+id/timeZone_array"
-                    android:layout_width="147dp"
-                    android:layout_height="1211dp"
+                    android:layout_width="213dp"
+                    android:layout_height="1229dp"
                     android:textSize="12sp"
                     app:autoSizeTextType="none"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.664"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
                     android:id="@+id/placeArray"
-                    android:layout_width="168dp"
-                    android:layout_height="1210dp"
+                    android:layout_width="185dp"
+                    android:layout_height="1214dp"
                     android:textSize="12sp"
                     app:autoSizeTextType="none"
                     app:layout_constraintBottom_toBottomOf="parent"

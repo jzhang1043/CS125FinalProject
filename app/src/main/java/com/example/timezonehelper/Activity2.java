@@ -34,6 +34,9 @@ public class Activity2 extends AppCompatActivity {
         showTimeZone(countryName);
         showZoneId(countryName);
 
+
+
+
     }
 
     public void showTimeZone(String NameOfCountry) {
