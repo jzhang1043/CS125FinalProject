@@ -42,14 +42,15 @@ public class MainActivity extends AppCompatActivity {
         // set action to the toolbar. Top right can pull out menu.
         Toolbar toolbar = findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
-        setSupportActionBar(toolbar); // this line specficially adds a toolbar to action
+        setSupportActionBar(toolbar); // this line specifically adds a toolbar to action
 
         // set the current Time.
         //systemTime = findViewById(R.id.currentTime);
         systemTime = findViewById(R.id.currentTime); // set the current time to system time
         //clock = new timeThread();
-        clock = new timeThread();
-        clock.start();
+        clock = new timeThread(); // new time thread gets set to clock
+        // clock.start();
+        clock.start(); // start the clock
 
         // set my time Zone using timezone.getDefault(); get the system's time Zone.
         TextView myTimeZone = findViewById(R.id.myTimeZone);
