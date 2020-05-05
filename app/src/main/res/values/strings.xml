@@ -9,15 +9,17 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="enter_location">Please enter the country that you are looking for</string>
+    <string name="enter_location">Please enter the country code that you are looking for</string>
     <string name="display_time">Your current time:</string>
     <string name="yourTimeZone">"You are in: "</string>
-    <string name="input_hint">Please enter the full name of the country</string>
+    <string name="input_hint">Please enter the country code</string>
     <string name="input_hint2">Ex. New York, California...</string>
     <string name="Search">Search</string>
     <string name="enter_location2">Specific State?</string>
     <string name="activity2">Activity2</string>
     <string name="time_zone_text">List of Time Zones:</string>
     <string name="TimeZone">Time Zone</string>
+    <string name="InputIncorrect">Please enter valid countryCode!</string>
     <string name="time">Time</string>
+    <string name="place">Place</string>
 </resources>

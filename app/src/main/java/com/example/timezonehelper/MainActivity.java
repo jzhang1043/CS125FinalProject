@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.timezonehelper.logic.TimeZoneOfCountry;
+
 import java.text.SimpleDateFormat;
 import java.util.TimeZone;
 
@@ -83,11 +85,23 @@ public class MainActivity extends AppCompatActivity {
 
     public void openActivity2() {
         EditText TextInput = findViewById(R.id.textInput);
-        String text = TextInput.getText().toString();
+        String userInput = TextInput.getText().toString();
+        TextView errorMess = findViewById(R.id.error);
 
-        Intent intent = new Intent(this, Activity2.class);
-        intent.putExtra(EXTRA_TEXT, text);
-        startActivity(intent);
+        if (userInput == null || userInput.length() < 2) {
+            errorMess.setVisibility(View.VISIBLE);
+        } else {
+            TimeZoneOfCountry temp = new TimeZoneOfCountry();
+            String upperInput = userInput.toUpperCase();
+            if (!temp.isCountryExist(upperInput)) {
+                errorMess.setVisibility(View.VISIBLE);
+            } else if (temp.isCountryExist(upperInput)) {
+                errorMess.setVisibility(View.INVISIBLE);
+                Intent intent = new Intent(this, Activity2.class);
+                intent.putExtra(EXTRA_TEXT, upperInput);
+                startActivity(intent);
+            }
+        }
     }
 
     /** timeThread class that extends Thread.
