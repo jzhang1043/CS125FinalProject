@@ -45,17 +45,17 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar); // this line specifically adds a toolbar to action
 
         // set the current Time.
-        //systemTime = findViewById(R.id.currentTime);
         systemTime = findViewById(R.id.currentTime); // set the current time to system time
-        //clock = new timeThread();
         clock = new timeThread(); // new time thread gets set to clock
-        // clock.start();
         clock.start(); // start the clock
 
         // set my time Zone using timezone.getDefault(); get the system's time Zone.
-        TextView myTimeZone = findViewById(R.id.myTimeZone);
-        TimeZone timeZone = TimeZone.getDefault();
-        myTimeZone.setText(timeZone.getDisplayName());
+        // TextView myTimeZone = findViewById(R.id.myTimeZone);
+        TextView myTimeZone = findViewById(R.id.myTimeZone); // create a textview obj called mytimezone
+        //TimeZone timeZone = TimeZone.getDefault();
+        TimeZone timeZone = TimeZone.getDefault(); // create a timezone object called timezone
+        //myTimeZone.setText(timeZone.getDisplayName());
+        myTimeZone.setText(timeZone.getDisplayName());  // set text with mytimezone
 
         // set search button. OnClickListener is able to run openActivity2() once clicked.
         Button searchButton = findViewById(R.id.button);
