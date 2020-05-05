@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         // it is located at the top right; 3 little dot menu.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu); // inflate menu to add items to action bar
         return true;
     }
 
@@ -79,13 +79,13 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Intent about = new Intent(this, Activity_About.class);
-            startActivity(about);
+        if (id == R.id.action_settings) { // check id
+            Intent about = new Intent(this, Activity_About.class); // new intent
+            startActivity(about); // starts the activity
             return true;
         }
 
-        return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item); // return selected item
     }
 
     public void openActivity2() {
